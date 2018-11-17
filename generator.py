@@ -14,7 +14,6 @@ class Generator:
     def generate(self):
         n_edges = random.randint(self.n_elements / 2, self.n_elements * 2)
         n_data = self.n_elements / 4
-
         max_weight = 5
 
         vertices = []
