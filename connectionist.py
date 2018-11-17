@@ -38,16 +38,14 @@ class Connectionist:
     """
 
 
-    def update(self, connections, specials):
+    def update(self, activations, connections, specials):
         converged = True
 
         dim = specials.size
-        activations = [self.init_val] * dim
-        d = self.d
 
         new_activations = []
         for i in range(dim):
-            new_activations.append(activations[i] * (1-d))
+            new_activations.append(activations[i] * (1-self.d))
             net = np.sum(activations * connections[i]) + specials[i]
 
             if net > 0:
@@ -70,9 +68,11 @@ class Connectionist:
         connections, specials = network 
 
         # special nodes biasing specific nodes (not considered in calculating harmony)
-
+        
+        dim = specials.size
+        activations = [self.init_val] * dim
         for i in range(self.max_time):
-            activations, done = self.update(connections, specials)
+            activations, done = self.update(activations, connections, specials)
             if done:
                 break
             # print activations
