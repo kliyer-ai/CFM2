@@ -1,6 +1,7 @@
 from generator import Generator
 from search import Searcher
 from connectionist import Connectionist
+from vertex import Vertex
 
 g = Generator(2)
 searcher = Searcher()
@@ -12,8 +13,26 @@ for i in range(n):
     belief_network = g.get_belief_network()
     neural_network = g.get_neural_network()
 
-    print 'search', searcher.run(belief_network)
-    print 'connector', connector.run(neural_network)
+    coherence, (true, false) = searcher.run(belief_network)
+    print 'coherence search:', coherence
+    print 'accepted propositions:', sorted(true)
+    print 'rejected propositions:', sorted(false)
+    print '-----------------------------------------------'
+
+    activations, harmony = connector.run(neural_network)
+    print 'harmony', harmony
+    true = []
+    false = []
+    for i, a in enumerate(activations):
+        if a == 1:
+            true.append(Vertex(i))
+        else:
+            false.append(Vertex(i))
+    print 'accepted propositions:', sorted(true)
+    print 'rejected propositions:', sorted(false)
+
+    print '#################################################'
+    print '#################################################'
 
 
 
