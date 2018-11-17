@@ -17,7 +17,6 @@ class Generator:
 
         max_weight = 5
 
-
         vertices = []
         c_plus = {}
         c_minus = {}
@@ -25,7 +24,7 @@ class Generator:
 
         # create vertices
         for n in xrange(self.n_elements):
-            vertices.append(Vertex())
+            vertices.append(Vertex(n))
             
         # create edges
         for n in xrange(n_edges):
