@@ -3,7 +3,7 @@ from search import Searcher
 from connectionist import Connectionist
 from vertex import Vertex
 
-n_vertices = 4 # number of elements/nodes
+n_vertices = 10 # number of elements/nodes
 g = Generator(n_vertices)
 searcher = Searcher()
 connector = Connectionist()

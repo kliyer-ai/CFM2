@@ -41,9 +41,9 @@ class Generator:
             else:
                 c_minus[edge] = w
                 
-        # add data elements    
-        for n in xrange(n_data):
-            v = random.choice(vertices)
+        # add data elements
+        datas = random.sample(vertices, n_data)    
+        for v in datas:
             w = random.random() * max_weight
             data_elements[v] = w
 
