@@ -18,3 +18,6 @@
 ### conntectionist.py
 * init_val: see slides; two values are possible
 * threshold: see slides; two values are possible; refers to 'min change'
+
+### Misc
+* The believe network has continuous weight. However, the neural network has fixed weight (either excitatory or inhibitory). So, naturally, information gets lost which might explain the poor performance.
