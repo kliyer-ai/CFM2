@@ -52,13 +52,22 @@ class Connectionist:
             else:
                 new_activations[i] += net * (activations[i]-self.min)
 
-            new_activations[i] = np.tanh(new_activations[i])
+            if new_activations[i] > self.max:
+                new_activations[i] = self.max
+            if new_activations[i] < self.min:
+                new_activations[i] = self.min
+            # new_activations[i] = np.tanh(new_activations[i])
             if np.abs(new_activations[i] - activations[i]) > self.threshold:
                 converged = False
         return new_activations, converged
 
 
     def discretise(self, activations):
+        for i in range(len(activations)):
+            if activations[i] > 0:
+                activations[i] = self.max
+            else:
+                activations[i] = self.min
         return np.sign(activations)
             
     
