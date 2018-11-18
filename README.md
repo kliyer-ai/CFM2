@@ -4,7 +4,7 @@
 1. make sure to use python version 2.7
 1. run main.py, e.g. 'python main.py'
 
-## Things you could consider chaning for your experiments:
+## Things you could consider changing for your experiments:
 ### main.py
 * n_vertices: determines the amount of nodes in the network. 
 * n: how many runs should be performed at once.
@@ -20,4 +20,4 @@
 * threshold: see slides; two values are possible; refers to 'min change'
 
 ### Misc
-* The believe network has continuous weight. However, the neural network has fixed weight (either excitatory or inhibitory). So, naturally, information gets lost which might explain the poor performance.
+* The believe network has continuous weight. However, the neural network has fixed weight (either excitatory or inhibitory). So, naturally, information gets lost which might explain the poor performance of the neural net.
