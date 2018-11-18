@@ -2,6 +2,7 @@
 
 ## Instruction
 1. make sure to use python version 2.7
+1. make sure you have numpy installed
 1. run main.py, e.g. 'python main.py'
 
 ## Things you could consider changing for your experiments:
