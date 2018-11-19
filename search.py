@@ -47,7 +47,7 @@ class Searcher:
         coh = 0
         # consistent elements
         for (vi, vj), w in c_plus.items():
-            if vi in true and vj in true:
+            if vi in true and vj in true or vi in false and vj in false:
                 coh += w
         
         # inconsistent elements
