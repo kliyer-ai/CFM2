@@ -8,7 +8,7 @@ g = Generator(n_vertices)
 searcher = Searcher()
 connector = Connectionist()
 
-n = 5 # number of runs
+n = 20 # number of runs
 for i in range(n):
     g.generate()
     belief_network = g.get_belief_network()

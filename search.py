@@ -57,7 +57,7 @@ class Searcher:
                 
         # data elements
         for v, w in data_elements.items():
-            if v in c_plus:
+            if v in true:
                 coh += w
                 
         return coh

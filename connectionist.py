@@ -80,6 +80,8 @@ class Connectionist:
             activations, done = self.update(activations, connections, specials)
             if done:
                 break
+        else:
+            print 'network didn\'t settle'
 
         activations = self.discretise(activations)
         harmony = self.harmony(activations, connections)
